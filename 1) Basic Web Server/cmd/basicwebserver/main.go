@@ -1,9 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"log"
+
+	"github.com/RonitSamaddar/Golang-Projects/basicwebserver/internal/server"
 )
 
 func main() {
-	fmt.Println("Hello World!")
+	if err := server.Setup(); err != nil {
+		log.Fatalf("Failed to setup server: %+v", err)
+	} else {
+		log.Println("Server setup complete!")
+	}
+
 }
